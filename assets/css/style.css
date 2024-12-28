@@ -1441,3 +1441,6 @@ textarea.input-field {
 .swiper-slide img:active {
   cursor: grabbing;
 }
+.wrapper .icon i{
+  margin-top: 5px;
+}
