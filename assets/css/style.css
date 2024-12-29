@@ -1268,15 +1268,17 @@ textarea.input-field {
 .testimonial .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 30px;
 }
 .testimonial .row .col {
-  box-shadow: 0 5px 20px 1px hsla(220, 63%, 33%, 0.1);
-  text-align: center;
+  box-shadow: 0 5px 10px 1px hsla(220, 63%, 33%, 0.062);
+  border: 1px solid #3333331e;
+  text-align: right;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  gap: 20px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 40px 20px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1284,26 +1286,40 @@ textarea.input-field {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
-.testimonial .row .col .google-5-star {
-  width: 100px;
+.testimonial .row .col .name-1 {
+  font-size: 13px;
+  font-weight: 600;
 }
 .testimonial h2 {
   margin-bottom: 50px;
 }
 .testimonial .row .col p {
   margin: 15px 0 20px;
-  font-weight: 700;
 }
 .testimonial .row .col img {
-  margin: 10px 0;
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+@media (max-width: 991px) {
+  .testimonial .row {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 @media (max-width: 768px) {
-  .testimonial .row,
   .grid-list {
     grid-template-columns: repeat(1, 1fr);
   }
   .hero {
     padding-block-start: calc(var(--section-padding) + 80px);
+  }
+  .testimonial .row .col {
+    flex-direction: column-reverse;
+    text-align: center;
   }
 }
 .name {
@@ -1330,11 +1346,17 @@ textarea.input-field {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
+.wrapper .icon span:last-of-type {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 .wrapper .tooltip {
   position: absolute;
   top: 0;
@@ -1440,7 +1462,4 @@ textarea.input-field {
 }
 .swiper-slide img:active {
   cursor: grabbing;
-}
-.wrapper .icon i{
-  margin-top: 5px;
 }
